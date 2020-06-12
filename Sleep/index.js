@@ -4,13 +4,13 @@ module.exports = async function (context, req) {
         await sleep(ms);
         context.res = {
             // status: 200, /* Defaults to 200 */
-            body: "Slept for " + ms + " millisecond(s)."
+            body: {"slept": ms}
         };
     }
     else {
         context.res = {
             status: 400,
-            body: "Please pass ms (milliseconds) on the query string or in the request body."
+            body: {msg: "Please pass ms (milliseconds) on the query string or in the request body."}
         };
     }
 };
